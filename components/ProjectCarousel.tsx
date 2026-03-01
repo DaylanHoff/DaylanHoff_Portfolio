@@ -75,7 +75,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
         <button
           onClick={scrollPrev}
           disabled={!canScrollPrev}
-          className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm border rounded-full p-2 shadow-lg transition-all duration-200 -translate-x-1/2 md:translate-x-0 ${
+          className={`absolute left-1 md:left-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm border rounded-full p-2 shadow-lg transition-all duration-200 md:-translate-x-1/2 ${
             canScrollPrev
               ? "opacity-100 hover:bg-primary hover:text-primary-foreground cursor-pointer"
               : "opacity-30 cursor-not-allowed"
@@ -143,7 +143,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
         <button
           onClick={scrollNext}
           disabled={!canScrollNext}
-          className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm border rounded-full p-2 shadow-lg transition-all duration-200 translate-x-1/2 md:translate-x-0 ${
+          className={`absolute right-1 md:right-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm border rounded-full p-2 shadow-lg transition-all duration-200 md:translate-x-1/2 ${
             canScrollNext
               ? "opacity-100 hover:bg-primary hover:text-primary-foreground cursor-pointer"
               : "opacity-30 cursor-not-allowed"

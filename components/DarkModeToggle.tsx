@@ -1,11 +1,21 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { Button } from "./ui/button";
 
 export function DarkModeToggle() {
   const { theme, setTheme } = useTheme();
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setHidden(window.scrollY > 200);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (hidden) return null;
 
   return (
     <Button

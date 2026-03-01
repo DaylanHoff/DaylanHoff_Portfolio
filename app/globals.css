@@ -42,7 +42,7 @@
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 220 30% 8%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
@@ -65,8 +65,101 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
+}
+
+/* Glow card effect */
+.glow-card {
+  position: relative;
+}
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3), rgba(59, 130, 246, 0.3));
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Animated gradient text */
+.gradient-text-animate {
+  background-size: 200% auto;
+  animation: gradient-text 3s ease infinite;
+}
+@keyframes gradient-text {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* Shine effect on hover */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: none;
+}
+.shine-effect:hover::after {
+  animation: shine 0.6s ease forwards;
+}
+@keyframes shine {
+  to { transform: translateX(100%); }
+}
+
+/* Hero name glow */
+.hero-name-glow {
+  filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.3)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.15));
+}
+.dark .hero-name-glow {
+  filter: drop-shadow(0 0 40px rgba(99, 102, 241, 0.4)) drop-shadow(0 0 80px rgba(139, 92, 246, 0.2));
+}
+
+/* Dark mode section edge blending */
+.section-fade-top {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 60px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60px);
+}
+.section-fade-bottom {
+  mask-image: linear-gradient(to top, transparent 0%, black 60px);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60px);
+}
+
+/* Smooth dark section transitions */
+.dark-section-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(30, 41, 59, 0.5) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
