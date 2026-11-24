@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { User, FolderOpen, Server, Shield, Briefcase, FileText, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import { RESUME_PAGE_PATH } from "@/lib/routes";
 
 const navItems = [
   { id: "hero", label: "About", icon: User },
@@ -84,7 +85,7 @@ export function FloatingNav() {
             {/* Separator + Resume link (hidden until lg — accessible from hero CTA on smaller screens) */}
             <div className="hidden lg:block w-px h-5 bg-border/50 mx-1" />
             <a
-              href="/resume"
+              href={RESUME_PAGE_PATH}
               className="hidden lg:flex relative items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
               aria-label="View Resume"
             >

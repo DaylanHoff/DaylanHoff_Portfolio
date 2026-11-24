@@ -12,6 +12,7 @@ import { ScrollParallaxBackground } from "@/components/ScrollParallaxBackground"
 import { HeroBackground, SectionBackground } from "@/components/AnimatedBackground";
 import { WaveDivider } from "@/components/WaveDivider";
 import { clientProjects, experience } from "@/lib/data";
+import { RESUME_PAGE_PATH } from "@/lib/routes";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -101,7 +102,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row items-center gap-3 mb-8"
             >
               <Button size="lg" className="shine-effect px-8" asChild>
-                <a href="/resume">
+                <a href={RESUME_PAGE_PATH}>
                   <FileText className="mr-2 h-5 w-5" />
                   View Resume
                 </a>
