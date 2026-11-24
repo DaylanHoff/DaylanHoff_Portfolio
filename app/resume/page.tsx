@@ -16,7 +16,7 @@ export default function ResumePage() {
       <div className="container relative mx-auto px-4 py-8 md:py-12">
         {/* Back navigation */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={false}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
           className="mb-8"
@@ -31,7 +31,7 @@ export default function ResumePage() {
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-8 md:mb-12"

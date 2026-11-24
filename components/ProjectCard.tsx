@@ -12,6 +12,9 @@ interface ProjectCardProps {
   technologies: string[];
   github?: string;
   demo?: string;
+  website?: string;
+  role?: string;
+  location?: string;
   highlights: string[];
   index: number;
 }
@@ -22,12 +25,15 @@ export function ProjectCard({
   technologies,
   github,
   demo,
+  website,
+  role,
+  location,
   highlights,
   index,
 }: ProjectCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
@@ -36,6 +42,8 @@ export function ProjectCard({
       <Card className="h-full flex flex-col hover:shadow-lg transition-shadow">
         <CardHeader>
           <CardTitle className="text-xl">{title}</CardTitle>
+          {role && <p className="text-sm font-medium text-primary">{role}</p>}
+          {location && <p className="text-xs text-muted-foreground">{location}</p>}
           <CardDescription className="text-sm">{description}</CardDescription>
         </CardHeader>
         <CardContent className="flex-1 flex flex-col space-y-4">
@@ -60,6 +68,14 @@ export function ProjectCard({
           </div>
 
           <div className="flex gap-2 pt-2">
+            {website && (
+              <Button variant="outline" size="sm" asChild>
+                <a href={website} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${title} website`}>
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Visit Website
+                </a>
+              </Button>
+            )}
             {github && (
               <Button variant="outline" size="sm" asChild>
                 <a href={github} target="_blank" rel="noopener noreferrer">

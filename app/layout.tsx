@@ -14,13 +14,19 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Daylan Hoff - DevOps Engineer & Privacy Advocate",
+    default: "Daylan Hoff - Cloud & Platform Engineer",
     template: "%s | Daylan Hoff"
   },
-  description: "DevOps Engineer specializing in C#/.NET, AWS, and privacy-first application development. Building secure, scalable solutions with modern DevOps practices and automation.",
+  description: "Salt Lake City-based Senior DevOps Engineer with six years of engineering experience. AWS, EKS, Kubernetes, Helm, Argo CD, CI/CD, and secure full-stack applications.",
   keywords: [
     "Daylan Hoff",
     "DevOps Engineer",
+    "Platform Engineer",
+    "Kubernetes",
+    "Amazon EKS",
+    "Helm",
+    "Argo CD",
+    "Salt Lake City",
     "C# Developer",
     ".NET Developer",
     "AWS Solutions",
@@ -51,15 +57,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://daylanhoff.com",
     siteName: "Daylan Hoff Portfolio",
-    title: "Daylan Hoff - DevOps Engineer & Privacy Advocate",
-    description: "DevOps Engineer specializing in C#/.NET, AWS, and privacy-first application development. Building secure, scalable solutions with modern DevOps practices.",
+    title: "Daylan Hoff - Cloud & Platform Engineer",
+    description: "AWS and Kubernetes platforms, reliable CI/CD, and secure full-stack applications. Senior DevOps Engineer based in Salt Lake City, Utah.",
     images: [
       {
         url: "https://daylanhoff.com/images/metadata.png",
         secureUrl: "https://daylanhoff.com/images/metadata.png",
         width: 1200,
         height: 630,
-        alt: "Daylan Hoff - DevOps Engineer & Privacy Advocate",
+        alt: "Daylan Hoff - Cloud & Platform Engineer",
         type: "image/png",
       },
     ],

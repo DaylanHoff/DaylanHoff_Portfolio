@@ -5,8 +5,14 @@ export function StructuredData() {
     name: "Daylan Hoff",
     url: "https://daylanhoff.com",
     image: "https://daylanhoff.com/images/metadata.png",
-    jobTitle: "DevOps Engineer",
-    description: "DevOps Engineer specializing in C#/.NET, AWS, and privacy-first application development",
+    jobTitle: "Senior DevOps Engineer",
+    description: "Cloud and platform engineer with six years of engineering experience in AWS, Kubernetes, CI/CD, and full-stack development.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Salt Lake City",
+      addressRegion: "Utah",
+      addressCountry: "US",
+    },
     sameAs: [
       "https://www.linkedin.com/in/DaylanHoff/",
       "https://github.com/DaylanHoff",
@@ -17,6 +23,11 @@ export function StructuredData() {
       "C#",
       ".NET",
       "AWS",
+      "Amazon EKS",
+      "Kubernetes",
+      "Helm",
+      "Argo CD",
+      "Cloud Security",
       "Cloud Infrastructure",
       "CI/CD",
       "Privacy Engineering",
@@ -27,7 +38,7 @@ export function StructuredData() {
     alumniOf: [
       {
         "@type": "EducationalOrganization",
-        name: "Your University" // Update with actual education
+        name: "Neumont College"
       }
     ]
   };

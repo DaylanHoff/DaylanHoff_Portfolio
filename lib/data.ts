@@ -6,12 +6,18 @@ export const experience = [
     startYear: 2022,
     location: "Remote",
     description:
-      "Senior DevOps Engineer and Architect designing scalable AWS architectures and leading privacy-first initiatives. Achieving zero downtime deployments and $10 million in savings through strategic development and cloud optimizations.",
+      "Senior DevOps engineer designing AWS architecture for 500+ applications, managing EKS releases with Argo CD and Helm, and driving year-over-year cloud cost reductions.",
     technologies: [
       "AWS",
+      "EKS",
+      "ECS",
+      "EC2",
+      "S3",
+      "IAM",
+      "CloudFront",
       "Kubernetes",
       "Helm",
-      "ArgoCD",
+      "Argo CD",
       "Azure DevOps",
       "CI/CD",
       ".NET",
@@ -19,20 +25,20 @@ export const experience = [
       "JavaScript",
     ],
     achievements: [
-      "Led initiatives saving over $10 million in tech debt and cloud costs by developing in-house replacement software and optimizing migrations",
-      "Designed and implemented AWS cloud architecture supporting internal and external applications",
+      "Reduced monthly cloud spending by approximately $30,000 year over year through workload migrations and ongoing cost optimization",
+      "Designed AWS architecture supporting 500+ applications; manage EKS releases with Argo CD and maintain Helm charts for releases and developer workflows",
       "Migrated from Jenkins to Azure DevOps with in-house pipeline management, boosting deployment speed in 500+ apps",
       "Built a Kubernetes release framework using Helm and Argo CD, achieving zero downtime over two years",
       "Led development of critical infrastructure components using .NET, C#, and JavaScript, resolving three major system crash causes",
+      "Work under the CTO to automate development tasks with AI tooling and advance company-wide AI adoption",
     ],
     leadership: [
       "Partnered with C-Suite executives, developers, and QA to direct the company's initiative of maintaining reliability and affordability",
-      "Led release nights ensuring zero downtime via blue-green deployments, enabling seamless updates for 50+ applications",
+      "Lead biweekly blue-green releases for 50+ applications in partnership with development and QA",
       "Managed engineering and operations teams using Agile Scrum methods, enhancing efficiency and cross-team collaboration",
     ],
     highlights: [
       "Recognized as one of two interns immediately hired for exceptional understanding of system vulnerabilities",
-      "Saved the engineering department over $1 million within first two years",
     ],
   },
   {
@@ -73,6 +79,49 @@ export const experience = [
   },
 ];
 
+export const clientProjects = [
+  {
+    title: "Striker Training Complex",
+    role: "Full Stack & DevOps Engineer",
+    location: "Texas / Remote",
+    description:
+      "Web, recruiting, and CRM infrastructure for a tactical training company, delivered through HoffLabs.",
+    technologies: ["Vite", "TypeScript", "Cloudflare Workers", "GitHub Actions", "Stripe"],
+    highlights: [
+      "Event management, invoicing, and Stripe payment workflows",
+      "Public website integrated with the CRM API",
+      "Automated deployments with GitHub Actions and Wrangler",
+    ],
+  },
+  {
+    title: "Cars Bikes n'Bites",
+    role: "Full Stack & Cloud Security Engineer",
+    location: "Utah",
+    description:
+      "An integrated community website and CRM for a local automotive group, covering events, vendors, and payments.",
+    technologies: ["React", "Next.js", "TypeScript", "Cloudflare Workers", "D1"],
+    website: "https://carsbikesnbites.com",
+    highlights: [
+      "Role-based access and two-factor authentication",
+      "AES-256-GCM encryption and audit logging",
+      "Content Security Policy and HSTS browser security headers",
+    ],
+  },
+  {
+    title: "Providence Steward",
+    role: "Web Platform Engineer",
+    location: "Texas / Remote",
+    description:
+      "A tax-firm website with repeatable cloud deployment workflows, delivered through HoffLabs.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudflare Pages"],
+    highlights: [
+      "Responsive website built with Next.js and Tailwind CSS",
+      "Static builds deployed to Cloudflare Pages",
+      "Automated delivery through GitHub Actions",
+    ],
+  },
+];
+
 export const projects = [
   {
     title: "Roleplay Studios Discord Bot",
@@ -106,31 +155,4 @@ export const projects = [
 
 export const certifications = [
   "Bachelor of Computer Science - Neumont College (2018-2021)",
-];
-
-export const passionProjects = [
-  {
-    title: "Hofflabs",
-    description: "Independent startup company run by me to provide consulting services as well provide and contribute to open source projects.",
-    image: "/images/hofflabs.png",
-    link: "https://hofflabs.org",
-  },
-  {
-    title: "Concluda",
-    description: "AI-driven privacy-first platform empowering users to understand documents",
-    image: "/images/Concluda.png",
-    link: "https://concluda.ai",
-  },
-  {
-    title: "Pinquin",
-    description: "The first truly privacy-first location sharing tool, replacing big tech alternatives",
-    image: "/images/pinquin.png",
-    link: "https://pinquin.net",
-  },
-  {
-    title: "Raspberry",
-    description: "A fun Steam game where you collect and trade raspberries while battling against the evil bananas",
-    image: "/images/raspberry.png",
-    link: "https://store.steampowered.com/app/3048820/Raspberry/",
-  },
 ];

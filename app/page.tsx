@@ -6,12 +6,12 @@ import { AWSArchitecture } from "@/components/AWSArchitecture";
 import { PrivacyArchitecture } from "@/components/PrivacyArchitecture";
 import { InteractiveTimeline } from "@/components/InteractiveTimeline";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
-import { ProjectCarousel } from "@/components/ProjectCarousel";
+import { ProjectCard } from "@/components/ProjectCard";
 import { FloatingNav } from "@/components/FloatingNav";
 import { ScrollParallaxBackground } from "@/components/ScrollParallaxBackground";
 import { HeroBackground, SectionBackground } from "@/components/AnimatedBackground";
 import { WaveDivider } from "@/components/WaveDivider";
-import { experience, passionProjects } from "@/lib/data";
+import { clientProjects, experience } from "@/lib/data";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
             {/* Name — dominant element */}
             <motion.h1
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
               className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-none mb-3 md:mb-4"
@@ -46,37 +46,38 @@ export default function Home() {
 
             {/* Role line */}
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-sm sm:text-base md:text-xl font-medium text-foreground/80 tracking-wide mb-4 md:mb-6"
             >
-              Senior DevOps Engineer &middot; Cloud Architect &middot; Privacy Advocate
+              Senior DevOps Engineer &middot; Cloud & Platform Engineering
             </motion.p>
 
             {/* Tagline */}
             <motion.p
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
               className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mb-6 md:mb-8 px-2"
             >
-              Designing scalable AWS architectures, leading zero-downtime deployments,
-              and building privacy-first software.
+              Six years of engineering experience. Building AWS and Kubernetes platforms,
+              automating reliable releases, and delivering secure full-stack applications.
+              Based in Salt Lake City, Utah.
             </motion.p>
 
             {/* Stat highlights */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
               className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-10 w-full sm:w-auto"
             >
               {[
-                { value: "$10M+", label: "Cost Savings" },
-                { value: "500+", label: "Apps Managed" },
-                { value: "0", label: "Downtime (2yr)" },
-                { value: "5+", label: "Years Exp." },
+                { value: "~$30K", label: "Monthly Spend Reduced, YoY" },
+                { value: "500+", label: "Applications Supported" },
+                { value: "Biweekly", label: "Production Releases" },
+                { value: "6", label: "Years of Experience" },
               ].map(({ value, label }) => (
                 <div
                   key={label}
@@ -94,7 +95,7 @@ export default function Home() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.75 }}
               className="flex flex-col sm:flex-row items-center gap-3 mb-8"
@@ -107,7 +108,7 @@ export default function Home() {
               </Button>
               <Button size="lg" variant="outline" className="px-8" asChild>
                 <a href="#projects">
-                  Explore Projects
+                  Explore Client Work
                   <ArrowDown className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -115,7 +116,7 @@ export default function Home() {
 
             {/* Social links */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
               className="flex justify-center gap-2"
@@ -154,37 +155,23 @@ export default function Home() {
         </motion.a>
       </section>
 
-      {/* Passion Projects */}
-      <section id="projects" className="relative py-12 md:py-16 lg:py-20 bg-background dark:bg-transparent" aria-labelledby="passion-projects-heading">
-        <SectionBackground variant="purple" />
+      {/* Selected Client Work */}
+      <section id="projects" className="relative py-12 md:py-16 lg:py-20 bg-background dark:bg-transparent" aria-labelledby="client-projects-heading">
+        <SectionBackground variant="blue" />
         <div className="container relative mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12"
-            >
-              <h2 id="passion-projects-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">Passion Projects</h2>
-              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-2">
-                All of my projects share a common foundation: <span className="font-semibold text-foreground">privacy-first design</span>. 
-                I believe technology should empower users while respecting their fundamental right to privacy.
+            <div className="text-center mb-8 md:mb-12">
+              <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">HoffLabs</p>
+              <h2 id="client-projects-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">Selected Client Work</h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+                Full-stack development, cloud delivery, and application security for
+                tactical training, community events, and professional services.
               </p>
-            </motion.div>
-            <ProjectCarousel projects={passionProjects} />
-            
-            {/* GitHub link */}
-            <div className="mt-8 md:mt-12 text-center">
-              <p className="text-sm md:text-base text-muted-foreground mb-4">
-                I have many more projects to explore!
-              </p>
-              <Button variant="outline" size="lg" className="shine-effect" asChild>
-                <a href="https://github.com/DaylanHoff" target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-5 w-5" />
-                  View All Projects on GitHub
-                </a>
-              </Button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {clientProjects.map((project, index) => (
+                <ProjectCard key={project.title} {...project} index={index} />
+              ))}
             </div>
           </div>
         </div>
@@ -198,7 +185,7 @@ export default function Home() {
         <div className="container relative mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
@@ -221,7 +208,7 @@ export default function Home() {
         <div className="container relative mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
@@ -244,7 +231,7 @@ export default function Home() {
         <div className="container relative mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
